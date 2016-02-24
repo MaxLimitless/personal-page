@@ -1,0 +1,317 @@
+@import "http://webfonts.ru/import/classicaone.css"
+@import "http://webfonts.ru/import/opengosta.css"
+@import "http://webfonts.ru/import/bender.css"
+@import "http://webfonts.ru/import/lasco.css"
+@import "http://webfonts.ru/import/panefresco.css"
+
+@keyframes zoomEffect
+    from
+        transform: scale(1.2) rotate(-45deg)
+    to
+        transform: scale(1) rotate(0deg)
+        
+@keyframes bgSwaps
+    0%
+        background: rgba(103, 146, 171, 0.8)
+    25%
+        background: rgba(115, 162, 189, 0.9)
+    50%
+        background: rgba(159, 194, 214, 0.8)
+    75%
+        background: rgba(115, 162, 189, 0.9)
+    100%
+        background: rgba(103, 146, 171, 0.8)
+    
+@keyframes bgSwaps2
+    0%
+        background: rgba(65, 62, 74, 0.8)
+    25%
+        background: rgba(115, 98, 110, 0.9)
+    50%
+        background: rgba(179, 129, 132, 0.8)
+    75%
+        background: rgba(115, 98, 110, 0.9)
+    100%
+        background: rgba(65, 62, 74, 0.8)
+
+@keyframes bgSwaps3
+    0%
+        background: rgba(232, 74, 95, 0.8)
+    25%
+        background: rgba(255, 132, 124, 0.9)
+    50%
+        background: rgba(254, 206, 168, 0.8)
+    75%
+        background: rgba(255, 132, 124, 0.9)
+    100%
+        background: rgba(232, 74, 95, 0.8)
+
+@keyframes bgSwaps4
+    0%
+        background: rgba(22, 147, 165, 0.8)
+    25%
+        background: rgba(2, 170, 176, 0.9)
+    50%
+        background: rgba(0, 205, 172, 0.8)
+    75%
+        background: rgba(2, 170, 176, 0.9)
+    100%
+        background: rgba(22, 147, 165, 0.8)
+    
+@keyframes flipMyPhoto
+    0%
+        background-color: transparent
+    50%
+        background-image: none
+    100%
+        transform: rotateY(180deg)
+
+/*LIGHT THEME*/
+$bg_header: rgba(248, 248, 255, 0.8)
+
+/*DARK THEME*/
+
+/*LARGE SCREENS*/
+    
+body
+    margin: 0 auto
+    padding: 0px
+    overflow-y: hidden
+    position: relative
+    height: 100%
+    background-image: url(http://localhost:8001/www/bg.jpg)
+    background-size: cover
+    //filter: grayscale(30%) contrast(80%) drop-shadow(5px)    
+    
+.wrapper
+    height: auto !important
+    height: 100%
+    overflow: hidden
+    margin: 0 auto
+.bg
+    z-index: 0
+    min-height: 100% !important
+    width: 100% !important
+    position: absolute
+    
+.ibg-bg
+    position: absolute
+    
+.main
+    position: relative
+    
+.header
+    height: 15vh
+    background: $bg_header
+    border-bottom: solid 1px grey
+    margin: 0 auto
+    padding: 0px
+    display: flex
+    box-shadow: 0px 3px 3px rgba(55, 55, 55, 0.6)
+    
+    .logo
+        order: 1
+        flex-grow: 7
+        justify-content: center
+        align-self: center
+        
+        h2
+            font-family: Classica One
+            margin-left: 10%
+            font-style: oblique
+            font-weight: bold
+        
+    .welcome
+        order: 2
+        flex-grow: 11
+        text-align: center
+        
+        h3, p
+            font-family: Bender
+            text-align: center
+            
+        .typed-cursor
+            display: none
+        
+    .options
+        order: 3
+        flex-grow: 4
+        display: flex
+        align-content: center
+        justify-content: flex-end
+        height: 100%
+        align-items: center
+        padding-right: 2%
+        
+        .social-circle
+            border: solid 1px #333
+            align-self: center
+            justify-content: space-around
+            margin-right: 2%
+            padding: 7px
+            border-radius: 50%
+            width: 30px
+            height: 30px
+            display: table
+            text-align: center
+            opacity: 0.9
+            transition: all 0.3s ease-in-out
+            
+            &:hover
+                opacity: 1
+                background: rgba(51, 51, 51, 0.9)
+                border: solid 1px #333
+                
+                i
+                    color: whitesmoke
+                    animation: zoomEffect 0.5s ease-in-out
+            
+            i
+                font-size: 1.4em
+                display: table-cell
+                vertical-align: middle
+                color: rgba(51, 51, 51, 0.9)
+    
+.content
+    display: flex
+    height: 78vh
+    align-items: stretch
+    
+.extraLeft
+    order: 1
+    flex-grow: 4
+    flex: 0 0 15vw
+
+.left
+    order: 2
+    flex-grow: 5
+    flex: 0 0 30vw
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    
+    .topLeft
+        margin: 0 0 0 0
+        height: 30vh
+        box-shadow: 0px 0px 5px 5px rgba(248, 248, 255, 0.3)
+        border-radius: 2px
+        animation: bgSwaps 60s ease-in-out infinite
+    
+    .bottomLeft
+        background: rgba(51, 51, 51, 0.8)
+        margin: 0 0 0 0
+        height: 30vh
+        box-shadow: 0px 0px 5px 5px rgba(248, 248, 255, 0.3)
+        border-radius: 2px
+        animation: bgSwaps2 60s ease-in-out infinite
+        transition: all 1s ease
+    
+.middle
+    order: 3
+    flex-grow: 1
+    display: flex
+    justify-content: center
+    flex: 0 0 10vw
+    
+    .myPhoto
+        background-image: url(http://media2.intoday.in/btmt/images/stories/10gadgets-for-businessman_6_052915012252.jpg)
+        background-size: cover
+        background-blend-mode: multiply
+        border-radius: 50%;
+        width: 100%
+        height: 100px
+        align-self: center
+        transform: scale(2.2) translate3d(0,0,0)
+        border: solid 3px rgba(51, 51, 51, 0.82)
+        box-shadow: 0px 0px 2px 1px rgba(248, 248, 255, 0.3)
+        transition: all 0.4s ease-in-out
+        transform-style: preserve-3d
+        transform-origin: 50%  51%
+        perspective: 1000
+        display: flex
+        align-content: center
+        align-items: center
+        justify-content: center
+        
+        i
+            align-self: center
+            font-size: 0.5em
+            transform-origin: 50 51%
+            transform: scale(5.5)
+            transition: all 0.4s ease-in-out
+            color: rgba(248, 248, 255, 0.8)
+        
+    .myPhotoHovered
+        perspective: 1001
+        transform: rotateY(180deg) scale(2.2) translate3d(0,0,0)
+        background-image: none
+        transition: all 0.4s ease-in-out
+        transform-style: preserve-3d
+        transform-origin: 50%  51%
+        
+.right
+    order: 4
+    flex-grow: 5
+    flex: 0 0 30vw
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    
+    .topRight
+        background: rgba(51, 51, 51, 0.8)
+        margin: 0 0 0 0
+        height: 30vh
+        box-shadow: 0px 0px 5px 5px rgba(248, 248, 255, 0.3)
+        border-radius: 2px
+        animation: bgSwaps3 60s ease-in-out infinite
+        transition: all 1s ease
+        text-align: right
+        
+    
+    .bottomRight
+        background: rgba(51, 51, 51, 0.8)
+        margin: 0 0 0 0
+        height: 30vh
+        box-shadow: 0px 0px 5px 5px rgba(248, 248, 255, 0.3)
+        border-radius: 2px
+        animation: bgSwaps4 60s ease-in-out infinite
+        transition: all 1s ease
+        text-align: right
+    
+.extraRight
+    order: 5
+    flex-grow: 4
+    flex: 0 0 15vw
+    
+.plate
+    max-width: 100%
+    
+    h3
+        font-family: Lasco
+        margin: 15px
+        color: rgba(248, 248, 255, 0.95)
+        text-shadow: 1px 2px 2px #333
+    p
+        padding: 15px
+        font-family: Panefresco
+        color: snow
+        text-shadow: 0px 1px 5px #333
+        font-smoothing: antialiased
+        
+    span.icon
+        display: none
+    
+.footer
+    height: 7vh
+    border-top: solid 1px grey
+    background: rgba(245, 248, 255, 0.8)
+    text-align: center
+    box-shadow: 0px -3px 3px rgba(55, 55, 55, 0.6)
+    display: flex
+    align-items: center
+    align-content: center
+    justify-content: center
+    
+    p
+        font-family: OpenGost Type A TT
+        align-self: center
